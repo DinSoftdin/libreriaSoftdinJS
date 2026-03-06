@@ -1,3 +1,6 @@
+/**
+ * Enumeración de tipoplanilla.
+ */
 class EnumTipoPlanilla {
     static E = 1;
     static Y = 2;
@@ -30,14 +33,30 @@ class EnumTipoPlanilla {
         { id: EnumTipoPlanilla.U, code: 'U', description: 'Uso UGPP pago por tercero' },
         { id: EnumTipoPlanilla.K, code: 'K', description: 'Estudiantes' }
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumTipoPlanilla.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumTipoPlanilla.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumTipoPlanilla.descriptions.find(item => item.description === description) || null;

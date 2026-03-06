@@ -1,3 +1,6 @@
+/**
+ * Enumeración de nivelriesgo.
+ */
 class EnumNivelRiesgo {
   static RIESGO_I = 1;
   static RIESGO_II = 2;
@@ -28,16 +31,32 @@ class EnumNivelRiesgo {
     },
     { id: EnumNivelRiesgo.RIESGO_V, code: 6.960, description: "Riesgo V" },
   ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
 
-  static getById(id) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getById(id) {
     return EnumNivelRiesgo.descriptions.find((item) => item.id === id) || null;
   }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
-  static getAll() {
+    static getAll() {
     return EnumNivelRiesgo.descriptions;
   }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
 
-  static getByDescription(description) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getByDescription(description) {
     return (
       EnumNivelRiesgo.descriptions.find(
         (item) => item.description === description

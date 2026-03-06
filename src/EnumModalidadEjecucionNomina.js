@@ -1,3 +1,6 @@
+/**
+ * Enumeración de modalidadejecucionnomina.
+ */
 class EnumModalidadEjecucionNomina {
     static INGRESO = 1;
     static DEDUCCION = 2;
@@ -16,14 +19,30 @@ class EnumModalidadEjecucionNomina {
         { id: EnumModalidadEjecucionNomina.PROV_PRS, code: 'PROV_PRS', description: 'Provisión Prestaciones Sociales' },
         { id: EnumModalidadEjecucionNomina.VACACIONES, code: 'VACACIONES', description: 'Vacaciones' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumModalidadEjecucionNomina.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumModalidadEjecucionNomina.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumModalidadEjecucionNomina.descriptions.find(item => item.description === description) || null;

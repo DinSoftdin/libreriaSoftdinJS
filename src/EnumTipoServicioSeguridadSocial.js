@@ -1,3 +1,6 @@
+/**
+ * Enumeración de tiposervicioseguridadsocial.
+ */
 class EnumTipoServicioSeguridadSocial {
     static EPS = 1;
     static AFP = 2;
@@ -20,14 +23,30 @@ class EnumTipoServicioSeguridadSocial {
         { id: EnumTipoServicioSeguridadSocial.MEN, code: 'MEN', description: 'Ministerio de Educación' },
         { id: EnumTipoServicioSeguridadSocial.FONDO_CESANTIAS, code: 'FONDO_CESANTIAS', description: 'Fondo de Cesantías' }
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumTipoServicioSeguridadSocial.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumTipoServicioSeguridadSocial.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumTipoServicioSeguridadSocial.descriptions.find(item => item.description === description) || null;

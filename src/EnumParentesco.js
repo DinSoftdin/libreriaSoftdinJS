@@ -1,3 +1,6 @@
+/**
+ * Enumeración de parentesco.
+ */
 class EnumParentesco {
     static PADRE = 1;
     static MADRE = 2;
@@ -16,14 +19,30 @@ class EnumParentesco {
         { id: EnumParentesco.TIO, code: 'TIO', description: 'Tio(a)' },
         { id: EnumParentesco.OTROS, code: 'OTROS', description: 'Otros' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumParentesco.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumParentesco.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumParentesco.descriptions.find(item => item.description === description) || null;

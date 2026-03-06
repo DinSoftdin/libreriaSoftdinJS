@@ -1,3 +1,6 @@
+/**
+ * Enumeración de reportecomprobantespagofiltros.
+ */
 class EnumReporteComprobantesPAGOFiltros {
     static CLIENTE = 1;
     static MODALIDAD_CONTRATACION = 2;
@@ -12,14 +15,30 @@ class EnumReporteComprobantesPAGOFiltros {
         { id: EnumReporteComprobantesPAGOFiltros.CODIGO, code: 'CODIGO', description: 'Código' },
         { id: EnumReporteComprobantesPAGOFiltros.EMAIL, code: 'EMAIL', description: 'Email' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumReporteComprobantesPAGOFiltros.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumReporteComprobantesPAGOFiltros.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumReporteComprobantesPAGOFiltros.descriptions.find(item => item.description === description) || null;

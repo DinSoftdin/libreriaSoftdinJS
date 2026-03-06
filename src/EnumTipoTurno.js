@@ -1,3 +1,6 @@
+/**
+ * Enumeración de tipoturno.
+ */
 class EnumTipoTurno {
     static PRIMER_TURNO = 1;
     static SEGUNDO_TURNO = 2;
@@ -8,14 +11,30 @@ class EnumTipoTurno {
         { id: EnumTipoTurno.SEGUNDO_TURNO, code: 'SEGUNDO_TURNO', description: 'Turno 2' },
         { id: EnumTipoTurno.TERCER_TURNO, code: 'TERCER_TURNO', description: 'Turno 3' }
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumTipoTurno.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumTipoTurno.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumTipoTurno.descriptions.find(item => item.description === description) || null;

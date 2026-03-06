@@ -1,3 +1,6 @@
+/**
+ * Enumeración de variablessistema.
+ */
 class EnumVariablesSistema {
     static AFC_Cuenta = 115;
     static Ahorro = 59;
@@ -265,18 +268,40 @@ class EnumVariablesSistema {
         {id: EnumVariablesSistema.Cambio_Revincular, code: 'Cambio_Revincular', description: 'CAMBIOS_C'},
         {id: EnumVariablesSistema.Cambio_TipoPago, code: 'Cambio_TipoPago', description: 'CAMBIOS_C'},
     ];
- 
-     static getById(id) {
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getById(id) {
         return EnumVariablesSistema.getAll().find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumVariablesSistema.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumVariablesSistema.getAll().find(item => item.description === description) || null;
     }
+/**
+* Obtiene la colección de elementos que coinciden con la descripción dada.
+* @param {string} description - Descripción a buscar.
+
+     * @returns {Array} Lista de objetos con key e id de los elementos que coinciden.
+*/
 
     static getDescripcion(description) {
         const collection = [];

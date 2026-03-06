@@ -1,3 +1,6 @@
+/**
+ * Enumeración de novedadretefuente.
+ */
 class EnumNovedadReteFuente {
     static Intereses_Vivienda = 1;
     static SaludVoluntaria = 2;
@@ -18,14 +21,30 @@ class EnumNovedadReteFuente {
         { id: EnumNovedadReteFuente.Procedimiento_Dos, code: 'Procedimiento_Dos', description: 'Procedimiento Dos' },
         { id: EnumNovedadReteFuente.Alimentacion, code: 'Alimentacion', description: 'Alimentación' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumNovedadReteFuente.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumNovedadReteFuente.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumNovedadReteFuente.descriptions.find(item => item.description === description) || null;

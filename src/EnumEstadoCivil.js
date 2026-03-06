@@ -1,3 +1,6 @@
+/**
+ * Enumeración de estadocivil.
+ */
 class EnumEstadoCivil {
   static SOLTERO = 1;
   static CASADO = 2;
@@ -51,16 +54,32 @@ class EnumEstadoCivil {
       descriptionIngles: "Not Defined",
     },
   ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
 
-  static getById(id) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getById(id) {
     return EnumEstadoCivil.descriptions.find((item) => item.id === id) || null;
   }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
-  static getAll() {
+    static getAll() {
     return EnumEstadoCivil.descriptions;
   }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
 
-  static getByDescription(description) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getByDescription(description) {
     return (
       EnumEstadoCivil.descriptions.find(
         (item) => item.description === description
@@ -77,8 +96,14 @@ class EnumEstadoCivil {
     emerald: EnumEstadoCivil.UNION_LIBRE,
     danger: EnumEstadoCivil.NO_DEFINIDO, // Default color for unknown states
   };
+/**
+* Obtiene un objeto con el mapeo de colores al valor del campo especificado.
+* @param {string} campo - Nombre del campo a extraer.
 
-  static getColors(campo) {
+     * @returns {Object} Objeto con claves de color y valores del campo.
+*/
+
+    static getColors(campo) {
     const colorArray = {};
 
     for (const [color, description] of Object.entries(
@@ -95,8 +120,16 @@ class EnumEstadoCivil {
     }
     return colorArray;
   }
+/**
+* Obtiene el nombre del color asociado a un valor del campo especificado.
+* @param {string} campo - Nombre del campo a consultar.
 
-  static getColorName(campo, valor) {
+     * @param {*} valor - Valor a buscar.
+
+     * @returns {string|undefined} Nombre del color o undefined si no se encuentra.
+*/
+
+    static getColorName(campo, valor) {
     const colors = EnumEstadoCalendario.getColors(campo);
     return Object.keys(colors).find((color) => colors[color] === valor);
   }

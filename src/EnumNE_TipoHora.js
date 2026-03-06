@@ -1,3 +1,6 @@
+/**
+ * Enumeración de ne tipohora.
+ */
 class EnumNE_TipoHora {
     static HED = EnumVariablesSistema.HoraExtraDiurna;
     static HEN = EnumVariablesSistema.HoraExtraNocturna;
@@ -16,18 +19,38 @@ class EnumNE_TipoHora {
         { id: EnumNE_TipoHora.HENDF, code: '6', description: EnumVariablesSistema.getDescription(EnumVariablesSistema.HoraExtraDominicalNocturna) },
         { id: EnumNE_TipoHora.HRNDF, code: '7', description: EnumVariablesSistema.getDescription(EnumVariablesSistema.RecargoNocturnoDominical) },
     ];
+/**
+* Obtiene la colección completa de elementos.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getCollection() {
         return EnumNE_TipoHora.descriptions;
     }
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumNE_TipoHora.getCollection().find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumNE_TipoHora.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumNE_TipoHora.getCollection().find(item => item.description === description) || null;

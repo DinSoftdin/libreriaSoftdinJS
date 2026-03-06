@@ -1,3 +1,6 @@
+/**
+ * Enumeración de ne status.
+ */
 class EnumNE_Status {
   static Validas = 1;
   static Pendientes = 2;
@@ -20,8 +23,14 @@ class EnumNE_Status {
     'danger': EnumNE_Status.Rechazadas,
     'lime': EnumNE_Status.Erroneas, // Default color for unknown states
   };
+/**
+* Obtiene un objeto con el mapeo de colores al valor del campo especificado.
+* @param {string} campo - Nombre del campo a extraer.
 
-  static getColors(campo) {
+     * @returns {Object} Objeto con claves de color y valores del campo.
+*/
+
+    static getColors(campo) {
     const colorArray = {};
 
     for (const [color, description] of Object.entries(EnumNE_Status.colorMapping)) {
@@ -34,24 +43,52 @@ class EnumNE_Status {
     }
     return colorArray;
   }
+/**
+* Obtiene la colección completa de elementos.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
-  static getCollection() {
+    static getCollection() {
     return EnumNE_Status.descriptions;
   }
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
 
-  static getById(id) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getById(id) {
     return EnumNE_Status.getCollection().find(item => item.id === id) || null;
   }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
-  static getAll() {
+    static getAll() {
     return EnumNE_Status.descriptions;
   }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
 
-  static getByDescription(description) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getByDescription(description) {
     return EnumNE_Status.getCollection().find(item => item.description === description) || null;
   }
+/**
+* Obtiene el nombre del color asociado a un valor del campo especificado.
+* @param {string} campo - Nombre del campo a consultar.
 
-  static getColorName(campo, valor) {
+     * @param {*} valor - Valor a buscar.
+
+     * @returns {string|undefined} Nombre del color o undefined si no se encuentra.
+*/
+
+    static getColorName(campo, valor) {
     const colors = EnumNE_Status.getColors(campo);
     return Object.keys(colors).find(color => colors[color] === valor);
   }

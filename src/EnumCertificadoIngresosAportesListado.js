@@ -1,3 +1,6 @@
+/**
+ * Enumeración de certificadoingresosaporteslistado.
+ */
 class EnumCertificadoIngresosAportesListado {
     static No36 = 1;
     static No37 = 2;
@@ -52,14 +55,30 @@ class EnumCertificadoIngresosAportesListado {
         { id: EnumCertificadoIngresosAportesListado.No59, code: "No59", description: "59 Ingreso laboral promedio de los últimos seis meses anteriores (numeral 4 art. 206 E.T.)" },
         { id: EnumCertificadoIngresosAportesListado.No60, code: "No60", description: "60 Valor de la retención en la fuente por ingresos laborales y de pensiones" }
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumCertificadoIngresosAportesListado.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumCertificadoIngresosAportesListado.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumCertificadoIngresosAportesListado.descriptions.find(item => item.description === description) || null;

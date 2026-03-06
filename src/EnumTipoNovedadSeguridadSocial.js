@@ -1,3 +1,6 @@
+/**
+ * Enumeración de tiponovedadseguridadsocial.
+ */
 class EnumTipoNovedadSeguridadSocial {
     static I = 1;
     static R = 2;
@@ -22,14 +25,30 @@ class EnumTipoNovedadSeguridadSocial {
         { id: EnumTipoNovedadSeguridadSocial.IRL, code: 'IRL', description: 'IRL' },
         { id: EnumTipoNovedadSeguridadSocial.LRM, code: 'LRM', description: 'LRM' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumTipoNovedadSeguridadSocial.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumTipoNovedadSeguridadSocial.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumTipoNovedadSeguridadSocial.descriptions.find(item => item.description === description) || null;

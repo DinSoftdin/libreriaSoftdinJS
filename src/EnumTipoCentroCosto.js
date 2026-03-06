@@ -1,3 +1,6 @@
+/**
+ * Enumeración de tipocentrocosto.
+ */
 class EnumTipoCentroCosto {
   static UNICO = 1;
   static TIEMPO = 2;
@@ -18,18 +21,34 @@ class EnumTipoCentroCosto {
       description: "Porcentaje y Tiempo",
     },
   ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
 
-  static getById(id) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getById(id) {
     return (
       EnumTipoCentroCosto.descriptions.find((item) => item.id === id) || null
     );
   }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
-  static getAll() {
+    static getAll() {
     return EnumTipoCentroCosto.descriptions;
   }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
 
-  static getByDescription(description) {
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
+
+    static getByDescription(description) {
     return (
       EnumTipoCentroCosto.descriptions.find(
         (item) => item.description === description

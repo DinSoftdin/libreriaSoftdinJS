@@ -1,3 +1,6 @@
+/**
+ * Enumeración de tipocontrato.
+ */
 class EnumTipoContrato {
     static FIJO = 1;
     static INDEFINIDO = 2;
@@ -14,14 +17,30 @@ class EnumTipoContrato {
         { id: EnumTipoContrato.PRACTICAS_PASANTIAS, code: 'PRACTICAS_PASANTIAS', description: 'Prácticas o Pasantías' },
         { id: EnumTipoContrato.ASOCIACION, code: 'ASOCIACION', description: 'Asociación' }
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumTipoContrato.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumTipoContrato.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumTipoContrato.descriptions.find(item => item.description === description) || null;

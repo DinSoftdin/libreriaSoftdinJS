@@ -1,3 +1,6 @@
+/**
+ * Enumeración de gruposanguineo.
+ */
 class EnumGrupoSanguineo {
     static Amas = 1;
     static Amenos = 2;
@@ -20,14 +23,30 @@ class EnumGrupoSanguineo {
         { id: EnumGrupoSanguineo.Omenos, code: 'Omenos', description: 'O-' },
         { id: EnumGrupoSanguineo.noDefinido, code: 'noDefinido', description: 'NO DEFINIDO' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumGrupoSanguineo.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumGrupoSanguineo.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumGrupoSanguineo.descriptions.find(item => item.description === description) || null;

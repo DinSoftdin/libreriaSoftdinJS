@@ -1,3 +1,6 @@
+/**
+ * Enumeración de mensajes.
+ */
 class EnumMensajes {
     static Ingresos = 1;
     static Terminos = 2;
@@ -14,14 +17,30 @@ class EnumMensajes {
         { id: EnumMensajes.FinalizacionContrato, code: 'FinalizacionContrato', description: 'Finalizacion de Contrato' },
         { id: EnumMensajes.VencimientoEstudios, code: 'VencimientoEstudios', description: 'Vencimiento de Estudios' },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumMensajes.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumMensajes.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumMensajes.descriptions.find(item => item.description === description) || null;

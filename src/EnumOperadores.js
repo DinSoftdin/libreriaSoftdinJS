@@ -1,3 +1,6 @@
+/**
+ * Enumeración de operadores matemáticos y de agrupación.
+ */
 class EnumOperadores {
     static CORCHETE_A = 1;
     static CORCHETE_C = 2;
@@ -19,14 +22,28 @@ class EnumOperadores {
         { id: EnumOperadores.DIVISION, code: '/', description: 'División' },
     ];
 
+    /**
+     * Obtiene un elemento por su identificador.
+     * @param {number} id - Identificador del elemento.
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+     */
     static getById(id) {
         return EnumOperadores.descriptions.find(item => item.id === id) || null;
     }
 
+    /**
+     * Obtiene todos los elementos de la enumeración.
+     * @returns {Array} Lista de objetos con id, code y description.
+     */
     static getAll() {
         return EnumOperadores.descriptions;
     }
 
+    /**
+     * Obtiene un elemento por su descripción.
+     * @param {string} description - Descripción del elemento.
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+     */
     static getByDescription(description) {
         return EnumOperadores.descriptions.find(item => item.description === description) || null;
     }

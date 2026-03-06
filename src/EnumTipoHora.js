@@ -1,5 +1,10 @@
 const EnumVariablesSistema = require('./EnumVariablesSistema');
 
+/**
+* Enumeración de tipohora.
+*/
+
+
 class EnumTipoHora {
     static ORD = EnumVariablesSistema.Salario;
     static RN = EnumVariablesSistema.RecargoNocturno;
@@ -22,14 +27,30 @@ class EnumTipoHora {
         { id: EnumTipoHora.HEDDF, code: 'HEDDF', description: EnumVariablesSistema.getById(EnumTipoHora.HEDDF).description },
         { id: EnumTipoHora.HENDF, code: 'HENDF', description: EnumVariablesSistema.getById(EnumTipoHora.HENDF).description },
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumTipoHora.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumTipoHora.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumTipoHora.descriptions.find(item => item.description === description) || null;

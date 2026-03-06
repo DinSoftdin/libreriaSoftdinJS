@@ -1,3 +1,6 @@
+/**
+ * Enumeración de ne periodonomina.
+ */
 class EnumNE_PeriodoNomina {
     static Semanal = 1;
     static Decenal = 2;
@@ -14,18 +17,38 @@ class EnumNE_PeriodoNomina {
         { id: EnumNE_PeriodoNomina.Mensual, code: 'Mensual', description: 'Mensual' },
         { id: EnumNE_PeriodoNomina.Otro, code: 'Otro', description: 'Otro' },
     ];
+/**
+* Obtiene la colección completa de elementos.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getCollection() {
         return EnumNE_PeriodoNomina.descriptions;
     }
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumNE_PeriodoNomina.getCollection().find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumNE_PeriodoNomina.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumNE_PeriodoNomina.getCollection().find(item => item.description === description) || null;

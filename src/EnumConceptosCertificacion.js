@@ -1,3 +1,6 @@
+/**
+ * Enumeración de conceptoscertificacion.
+ */
 class EnumConceptosCertificacion {
     static NIT = 1;
     static RAZON_SOCIAL = 2;
@@ -106,14 +109,30 @@ class EnumConceptosCertificacion {
         { id: EnumConceptosCertificacion.EMAIL, description2: "EMAIL", code: "<<51>>", description: "<<51>> EMAIL" },
         { id: EnumConceptosCertificacion.TEL_EMERGENCIA, description2: "TEL EMERGENCIA", code: "<<52>>", description: "<<52>> TEL EMERGENCIA" }
     ];
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumConceptosCertificacion.descriptions.find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumConceptosCertificacion.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumConceptosCertificacion.descriptions.find(item => item.description === description) || null;

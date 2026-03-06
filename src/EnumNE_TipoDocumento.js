@@ -1,3 +1,6 @@
+/**
+ * Enumeración de ne tipodocumento.
+ */
 class EnumNE_TipoDocumento {
     static Registro_civil = 11;
     static Tarjeta_identidad = 12;
@@ -24,18 +27,38 @@ class EnumNE_TipoDocumento {
         { id: EnumNE_TipoDocumento.NIT_otro_pais, code: 'NIT_otro_pais', description: 'NIT de otro país' },
         { id: EnumNE_TipoDocumento.NUIP, code: 'NUIP', description: 'NUIP *' },
     ];
+/**
+* Obtiene la colección completa de elementos.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getCollection() {
         return EnumNE_TipoDocumento.descriptions;
     }
+/**
+* Obtiene un elemento por su identificador.
+* @param {number} id - Identificador del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getById(id) {
         return EnumNE_TipoDocumento.getCollection().find(item => item.id === id) || null;
     }
+/**
+* Obtiene todos los elementos de la enumeración.
+* @returns {Array} Lista de objetos con id, code y description.
+*/
 
     static getAll() {
         return EnumNE_TipoDocumento.descriptions;
     }
+/**
+* Obtiene un elemento por su descripción.
+* @param {string} description - Descripción del elemento.
+
+     * @returns {Object|null} El objeto con id, code y description, o null si no existe.
+*/
 
     static getByDescription(description) {
         return EnumNE_TipoDocumento.getCollection().find(item => item.description === description) || null;

@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoftdinNomina/libreriaSoftdinJS.git"
+    "url": "git+https://github.com/DinSoftdin/libreriaSoftdinJS.git"
   },
   "keywords": [
     "keyword"
@@ -16,8 +16,8 @@
   "author": "Deivi Ibarra Negrette",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SoftdinNomina/libreriaSoftdinJS/issues"
+    "url": "https://github.com/DinSoftdin/libreriaSoftdinJS/issues"
   },
-  "homepage": "https://github.com/SoftdinNomina/libreriaSoftdinJS#readme",
+  "homepage": "https://github.com/DinSoftdin/libreriaSoftdinJS#readme",
   "_comments": "comando para ejecutar las veriosnes despues debe cambiar la VERSION 12.0.24  por la que sigue despues ejecutar este comando npm publish"
 }

@@ -14,8 +14,6 @@ class EnumModulosNovedades {
     static NOVEDADES_SEGURIDAD_SOCIAL = 10;
     static OTROS_INGRESOS_DESCUENTOS = 11;
     static PAGOS_EXTERNOS = 12;
-    static PAGO_LABOR = 13;
-    static PAGO_PRODUCCION = 14;
     static PRESTAMOS = 15;
 
     static descriptions = [
@@ -31,8 +29,6 @@ class EnumModulosNovedades {
         { id: EnumModulosNovedades.NOVEDADES_SEGURIDAD_SOCIAL, code: 'NOVEDADES_SEGURIDAD_SOCIAL', description: 'Novedades Seguridad Social' },
         { id: EnumModulosNovedades.OTROS_INGRESOS_DESCUENTOS, code: 'OTROS_INGRESOS_DESCUENTOS', description: 'Otros Ingresos Descuentos' },
         { id: EnumModulosNovedades.PAGOS_EXTERNOS, code: 'PAGOS_EXTERNOS', description: 'Pagos Externos' },
-        { id: EnumModulosNovedades.PAGO_LABOR, code: 'PAGO_LABOR', description: 'Pago Labor' },
-        { id: EnumModulosNovedades.PAGO_PRODUCCION, code: 'PAGO_PRODUCCION', description: 'Pago Producción' },
         { id: EnumModulosNovedades.PRESTAMOS, code: 'PRESTAMOS', description: 'Préstamos' }
     ];
 /**

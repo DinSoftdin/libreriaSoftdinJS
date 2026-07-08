@@ -29,7 +29,7 @@ class EnumConceptosCertificacion {
     static CESANTIAS = 25;
     static MOTIVO_RETIRO = 26;
     static FECHA_ACTUAL_LARGO = 27;
-    static FECHA_ACTUAL_CORTO = 27;
+    static FECHA_ACTUAL_CORTO = 28;
     static DESCRIPCION_CARGO = 29;
     static SALARIO_LETRAS = 30;
     static DESCRIPCION_CONTRATO = 31;
@@ -83,7 +83,7 @@ class EnumConceptosCertificacion {
         { id: EnumConceptosCertificacion.CESANTIAS, description2: "CESANTIAS", code: "<<25>>", description: "<<25>> CESANTIAS" },
         { id: EnumConceptosCertificacion.MOTIVO_RETIRO, description2: "MOTIVO RETIRO", code: "<<26>>", description: "<<26>> MOTIVO RETIRO" },
         { id: EnumConceptosCertificacion.FECHA_ACTUAL_LARGO, description2: "FECHA ACTUAL LARGO", code: "<<27>>", description: "<<27>> FECHA ACTUAL LARGO" },
-        { id: EnumConceptosCertificacion.FECHA_ACTUAL_CORTO, description2: "FECHA ACTUAL CORTO", code: "<<27>>", description: "<<27>> FECHA ACTUAL CORTO" },
+        { id: EnumConceptosCertificacion.FECHA_ACTUAL_CORTO, description2: "FECHA ACTUAL CORTO", code: "<<28>>", description: "<<28>> FECHA ACTUAL CORTO" },
         { id: EnumConceptosCertificacion.DESCRIPCION_CARGO, description2: "DESCRIPCION CARGO", code: "<<29>>", description: "<<29>> DESCRIPCION CARGO" },
         { id: EnumConceptosCertificacion.SALARIO_LETRAS, description2: "SALARIO LETRAS", code: "<<30>>", description: "<<30>> SALARIO LETRAS" },
         { id: EnumConceptosCertificacion.DESCRIPCION_CONTRATO, description2: "DESCRIPCION CONTRATO", code: "<<31>>", description: "<<31>> DESCRIPCION CONTRATO" },

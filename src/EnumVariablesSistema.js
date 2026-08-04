@@ -94,7 +94,7 @@ class EnumVariablesSistema {
   static SubsidioTransporte = 44;
   static Teletrabajo = 109;
   static ValesAlimentacion = 92;
-  static Viatico = 102;
+  static Viatico = 128;
   static IGE_IncapacidadGeneral = 45;
   static IRP_IncapacidadAccidenteTrabajo = 46;
   static LMA_LicenciaMaternidad = 47;

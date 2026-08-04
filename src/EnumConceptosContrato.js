@@ -5,7 +5,7 @@ class EnumConceptosContrato {
     static AREATRABAJO = 1;
     static CARGO = 2;
     static DIVISION = 3;
-    static MODALIDADSERVICIO = 4;
+    static GRUPONOMINA = 4;
     static SEDE = 5;
     static SUCURSAL = 6;
     static SUCURSALPILA = 7;
@@ -15,7 +15,7 @@ class EnumConceptosContrato {
         { id: EnumConceptosContrato.AREATRABAJO, code: 'AREATRABAJO', description: "Area de Trabajo" },
         { id: EnumConceptosContrato.CARGO, codigo: 'CARGO', description: "Cargo" },
         { id: EnumConceptosContrato.DIVISION, codigo: 'DIVISION', description: "División" },
-        { id: EnumConceptosContrato.MODALIDADSERVICIO, codigo: 'MODALIDADSERVICIO', description: "Modalidad de Servicio" },
+        { id: EnumConceptosContrato.GRUPONOMINA, codigo: 'GRUPONOMINA', description: "Grupo de Nómina" },
         { id: EnumConceptosContrato.SEDE, codigo: 'SEDE', description: "Sede" },
         { id: EnumConceptosContrato.SUCURSAL, codigo: 'SUCURSAL', description: "Sucursal" },
         { id: EnumConceptosContrato.SUCURSALPILA, codigo: 'SUCURSALPILA', description: "Sucursal PILA" },

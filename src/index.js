@@ -19,7 +19,6 @@ const enumExports = {
   EnumLocalizacion: "./EnumLocalizacion",
   EnumMensajes: "./EnumMensajes",
   EnumModalidadEjecucionNomina: "./EnumModalidadEjecucionNomina",
-  EnumModalidadServicio: "./EnumModalidadServicio",
   EnumModulos: "./EnumModulos",
   EnumModulosNovedades: "./EnumModulosNovedades",
   EnumNE_Ambiente: "./EnumNE_Ambiente",

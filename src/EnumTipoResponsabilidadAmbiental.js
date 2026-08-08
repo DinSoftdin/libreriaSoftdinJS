@@ -1,13 +1,13 @@
 /**
- * Enumeración de roles / responsabilidades por autoridad.
+ * Enumeración de tipos de responsabilidad ambiental.
  */
-class EnumRolResponsabilidades {
+class EnumTipoResponsabilidadAmbiental {
     static AUTORIDAD_SST = 1;
     static AUTORIDAD_AMBIENTAL = 2;
 
     static descriptions = [
-        { id: EnumRolResponsabilidades.AUTORIDAD_SST, code: 'AUTORIDAD_SST', description: 'Autoridad en SST' },
-        { id: EnumRolResponsabilidades.AUTORIDAD_AMBIENTAL, code: 'AUTORIDAD_AMBIENTAL', description: 'Autoridad Ambiental' },
+        { id: EnumTipoResponsabilidadAmbiental.AUTORIDAD_SST, code: 'AUTORIDAD_SST', description: 'Autoridad en SST' },
+        { id: EnumTipoResponsabilidadAmbiental.AUTORIDAD_AMBIENTAL, code: 'AUTORIDAD_AMBIENTAL', description: 'Autoridad Ambiental' },
     ];
 /**
 * Obtiene un elemento por su identificador.
@@ -17,7 +17,7 @@ class EnumRolResponsabilidades {
 */
 
     static getById(id) {
-        return EnumRolResponsabilidades.descriptions.find(item => item.id === id) || null;
+        return EnumTipoResponsabilidadAmbiental.descriptions.find(item => item.id === id) || null;
     }
 /**
 * Obtiene todos los elementos de la enumeración.
@@ -25,7 +25,7 @@ class EnumRolResponsabilidades {
 */
 
     static getAll() {
-        return EnumRolResponsabilidades.descriptions;
+        return EnumTipoResponsabilidadAmbiental.descriptions;
     }
 /**
 * Obtiene un elemento por su descripción.
@@ -35,8 +35,8 @@ class EnumRolResponsabilidades {
 */
 
     static getByDescription(description) {
-        return EnumRolResponsabilidades.descriptions.find(item => item.description === description) || null;
+        return EnumTipoResponsabilidadAmbiental.descriptions.find(item => item.description === description) || null;
     }
 }
 
-module.exports = EnumRolResponsabilidades;
+module.exports = EnumTipoResponsabilidadAmbiental;

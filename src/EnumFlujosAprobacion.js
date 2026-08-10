@@ -6,12 +6,18 @@
  */
 class EnumFlujosAprobacion {
   static SOLICITUD_VACANTE = "SOLICITUD_VACANTE";
+  static PERFIL_CARGO = "PERFIL_CARGO";
 
   static descriptions = [
     {
       id: EnumFlujosAprobacion.SOLICITUD_VACANTE,
       code: "SOLICITUD_VACANTE",
       description: "Solicitud de Vacante",
+    },
+    {
+      id: EnumFlujosAprobacion.PERFIL_CARGO,
+      code: "PERFIL_CARGO",
+      description: "Perfil de Cargo",
     },
   ];
 

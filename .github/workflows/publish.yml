@@ -16,18 +16,54 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Show package version
-        run: node -p "require('./package.json').version"
+      - name: Verificar que el secreto NPM_TOKEN exista
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "::error::El secreto NPM_TOKEN no está configurado en este repositorio."
+            echo "Crearlo en Settings > Secrets and variables > Actions con un token de tipo Automation"
+            echo "de la cuenta npm 'softdin' (los tokens Publish fallan si la cuenta exige 2FA en escritura)."
+            exit 1
+          fi
+          echo "NPM_TOKEN presente (${#NPM_TOKEN} caracteres)."
 
-      - name: Publish to npm
-        run: npm publish --access public
+      - name: Auditar enums
+        run: npm test
+
+      - name: Resolver versión a publicar
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Versión en package.json: $VERSION"
+          if npm view "softdinlibreriajs@$VERSION" version > /dev/null 2>&1; then
+            echo "already-published=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::softdinlibreriajs@$VERSION ya está publicada en npm; no hay nada que hacer."
+          else
+            echo "already-published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comprobar credenciales contra el registro
+        if: steps.version.outputs.already-published == 'false'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if ! npm whoami; then
+            echo "::error::El token no autentica contra registry.npmjs.org (revisar que no esté vencido ni revocado)."
+            exit 1
+          fi
+
+      - name: Publish to npm
+        if: steps.version.outputs.already-published == 'false'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public

@@ -1,6 +1,6 @@
 {
   "name": "softdinlibreriajs",
-  "version": "12.0.48",
+  "version": "13.0.0",
   "description": "Libreria Softdin",
   "main": "./src/index.js",
   "files": [

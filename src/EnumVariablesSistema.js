@@ -29,7 +29,7 @@ class EnumVariablesSistema {
   static Bonificacion = 112;
   static Bono = 118;
   static Bono_PagoAlimentacion = 120;
-  static Comision = 16;
+  static Comision = 129;
   static Compensacion_ExtraOrdinaria = 16;
   static Compensacion_Ordinaria = 117;
   static Cooperativa = 119;
@@ -84,13 +84,13 @@ class EnumVariablesSistema {
   static Retefuente = 40;
   static RetroActivo_Salario = 93;
   static RetroActivo_HorasExtras = 98;
-  static RetroActivo_Vacaciones = 95;
+  static RetroActivo_Vacaciones = 130;
   static Salario = 41;
   static Saldo_Negativo = 42;
   static Saldo_Positivo = 43;
   static SancionPublica = 125;
-  static SancionPrivada = 126;
-  static Sindicato = 103;
+  static SancionPrivada = 132;
+  static Sindicato = 131;
   static SubsidioTransporte = 44;
   static Teletrabajo = 109;
   static ValesAlimentacion = 92;

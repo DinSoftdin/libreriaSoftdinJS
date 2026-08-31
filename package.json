@@ -1,6 +1,6 @@
 {
   "name": "softdinlibreriajs",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "description": "Libreria Softdin",
   "main": "./src/index.js",
   "files": [
@@ -16,7 +16,7 @@
     "audit:enums": "node scripts/audit-enums.js",
     "audit:enums:strict": "node scripts/audit-enums.js --strict",
     "audit:index": "node scripts/audit-index.js",
-    "test": "node scripts/audit-enums.js && node scripts/audit-index.js"
+    "test": "node scripts/audit-enums.js --strict && node scripts/audit-index.js"
   },
   "repository": {
     "type": "git",

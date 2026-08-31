@@ -67,12 +67,31 @@ function auditEnum(enumName, enumClass) {
     .filter(([, count]) => count > 1)
     .map(([id, count]) => ({ id, count }));
   if (duplicatedIds.length > 0) {
-    warnings.push(
+    // Error y no advertencia: el id se persiste (concepto_novedades.variablesistema) y el
+    // resolver de conceptos consulta por ese valor quedandose con la primera coincidencia,
+    // asi que dos constantes con el mismo id le hacen elegir el concepto equivocado en
+    // silencio. Ver DinSoftdin/libreriaSoftdinJS#2.
+    issues.push(
       `IDs duplicados en descriptions: ${duplicatedIds.map((d) => `${d.id}x${d.count}`).join(", ")}`,
     );
   }
 
   const { values: constantValues } = getEnumConstantIds(enumClass);
+
+  const porId = new Map();
+  for (const [nombre, id] of constantValues.entries()) {
+    if (!porId.has(id)) porId.set(id, []);
+    porId.get(id).push(nombre);
+  }
+  const constantesRepetidas = [...porId.entries()].filter(([, ns]) => ns.length > 1);
+  if (constantesRepetidas.length > 0) {
+    issues.push(
+      `Constantes que comparten id: ${constantesRepetidas
+        .map(([id, ns]) => `${id} = ${ns.join(" / ")}`)
+        .join("; ")}`,
+    );
+  }
+
   const constantIds = new Set([...constantValues.values()]);
   const descriptionIds = new Set(ids);
 

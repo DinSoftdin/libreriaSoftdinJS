@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  # Sin filtro de `branches`: corre para cualquier PR, sea cual sea su base. Con un
+  # filtro a main los PR apilados —uno sobre otro— se fusionan sin pasar por el CI.
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          # La misma que usa publish.yml y la que compila a los consumidores.
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # Las dos auditorias. Ya existian, pero solo corrian dentro de publish.yml, que
+      # se dispara con un tag: la red estaba al final del recorrido, asi que un fallo
+      # bloqueaba el release cuando el codigo ya llevaba dias en main.
+      #
+      # audit-enums audita los 84 enums —incluida su carga como modulo— y audit-index
+      # comprueba que el `main` del paquete los exporte todos.
+      - run: npm test

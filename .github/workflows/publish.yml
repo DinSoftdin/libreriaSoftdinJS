@@ -24,14 +24,16 @@ jobs:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Verificar que el secreto NPM_TOKEN exista
+      - name: Verificar que exista el secreto con el token de npm
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN || secrets.SOFTDINJS }}
         run: |
           if [ -z "$NPM_TOKEN" ]; then
-            echo "::error::El secreto NPM_TOKEN no está configurado en este repositorio."
-            echo "Crearlo en Settings > Secrets and variables > Actions con un token de tipo Automation"
-            echo "de la cuenta npm 'softdin' (los tokens Publish fallan si la cuenta exige 2FA en escritura)."
+            echo "::error::Ni NPM_TOKEN ni SOFTDINJS estan configurados en este repositorio."
+            echo "Crear uno de los dos en Settings > Secrets and variables > Actions con un token de"
+            echo "tipo Automation de la cuenta npm 'softdin' (los tokens Publish fallan si la cuenta"
+            echo "exige 2FA en escritura). Se acepta cualquiera de los dos nombres: NPM_TOKEN tiene"
+            echo "prioridad y SOFTDINJS es el que ya existia."
             exit 1
           fi
           echo "NPM_TOKEN presente (${#NPM_TOKEN} caracteres)."
@@ -55,7 +57,7 @@ jobs:
       - name: Comprobar credenciales contra el registro
         if: steps.version.outputs.already-published == 'false'
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || secrets.SOFTDINJS }}
         run: |
           if ! npm whoami; then
             echo "::error::El token no autentica contra registry.npmjs.org (revisar que no esté vencido ni revocado)."
@@ -65,5 +67,5 @@ jobs:
       - name: Publish to npm
         if: steps.version.outputs.already-published == 'false'
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || secrets.SOFTDINJS }}
         run: npm publish --access public

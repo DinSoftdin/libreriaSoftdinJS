@@ -7,6 +7,7 @@ const enumExports = {
   EnumCertificadoIngresosAportesListado:
     "./EnumCertificadoIngresosAportesListado",
   EnumClaseEmpresa: "./EnumClaseEmpresa",
+  EnumClaseRiesgoActividad: "./EnumClaseRiesgoActividad",
   EnumConceptosCertificacion: "./EnumConceptosCertificacion",
   EnumConceptosContrato: "./EnumConceptosContrato",
   EnumContinente: "./EnumContinente",
@@ -40,6 +41,7 @@ const enumExports = {
   EnumNovedadReteFuente: "./EnumNovedadReteFuente",
   EnumOperadores: "./EnumOperadores",
   EnumParentesco: "./EnumParentesco",
+  EnumPermisosFormulario: "./EnumPermisosFormulario",
   EnumRegimenExcepcionSSS: "./EnumRegimenExcepcionSSS",
   EnumReporteComprobantesPAGO: "./EnumReporteComprobantesPAGO",
   EnumReporteComprobantesPAGOFiltros: "./EnumReporteComprobantesPAGOFiltros",

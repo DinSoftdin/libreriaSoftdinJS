@@ -13,9 +13,10 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "node scripts/audit-enums.js",
     "audit:enums": "node scripts/audit-enums.js",
-    "audit:enums:strict": "node scripts/audit-enums.js --strict"
+    "audit:enums:strict": "node scripts/audit-enums.js --strict",
+    "audit:index": "node scripts/audit-index.js",
+    "test": "node scripts/audit-enums.js && node scripts/audit-index.js"
   },
   "repository": {
     "type": "git",

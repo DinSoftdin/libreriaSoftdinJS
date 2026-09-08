@@ -6,12 +6,14 @@ class EnumTipoRegistroHistorial {
     static PRORROGA = 2;
     static TERMINO = 3;
     static NOVEDADPILA = 4;
+    static CONVERSION = 5;
 
     static descriptions = [
         { id: EnumTipoRegistroHistorial.CONTRATACION, code: 'CONTRATACION', description: 'Contratación' },
         { id: EnumTipoRegistroHistorial.PRORROGA, code: 'PRORROGA', description: 'Prórroga' },
         { id: EnumTipoRegistroHistorial.TERMINO, code: 'TERMINO', description: 'Termino' },
-        { id: EnumTipoRegistroHistorial.NOVEDADPILA, code: 'NOVEDADPILA', description: 'Novedades de PILA' }
+        { id: EnumTipoRegistroHistorial.NOVEDADPILA, code: 'NOVEDADPILA', description: 'Novedades de PILA' },
+        { id: EnumTipoRegistroHistorial.CONVERSION, code: 'CONVERSION', description: 'Conversión' }
     ];
 /**
 * Obtiene un elemento por su identificador.

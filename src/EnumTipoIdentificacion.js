@@ -19,7 +19,7 @@ class EnumTipoIdentificacion {
         { id: EnumTipoIdentificacion.CE, code: 'CE', description: "Cedula de Extranjería" },
         { id: EnumTipoIdentificacion.PA, code: 'PA', description: "Pasaporte" },
         { id: EnumTipoIdentificacion.NI, code: 'NI', description: "Numero de Identificación Tributaria NIT" },
-        { id: EnumTipoIdentificacion.CD, code: 'CD', description: "Carne Diplomático" },
+        { id: EnumTipoIdentificacion.CD, code: 'CD', description: "Carnet Diplomático" },
         { id: EnumTipoIdentificacion.SC, code: 'SC', description: "Salvoconducto de permanencia" },
         { id: EnumTipoIdentificacion.NIO, code: 'NIO', description: "Numero de Identificación Tributaria NIT Entidad Oficial" }
     ];

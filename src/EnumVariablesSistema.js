@@ -111,6 +111,7 @@ class EnumVariablesSistema {
   static Dia_NoTrabajado = 94;
   static LRM_LicenciaRemunerada = 106;
   static CuentaPorPagar = 58;
+  static ARL_PAGA_DIREC = 133;
 
   static descriptions = [
     {
@@ -632,6 +633,11 @@ class EnumVariablesSistema {
     {
       id: EnumVariablesSistema.CuentaPorPagar,
       code: "CuentaPorPagar",
+      description: "OTROS",
+    },
+    {
+      id: EnumVariablesSistema.ARL_PAGA_DIREC,
+      code: "ARL_PAGA_DIREC",
       description: "OTROS",
     },
   ];

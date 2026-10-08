@@ -70,6 +70,8 @@ class EnumVariablesSistema {
   static Pago_IncapIGE_EPS = 31;
   static Pago_IncapIGE_Patron = 32;
   static Pago_IncapLMA_EPS = 33;
+  // Licencia de paternidad (CST art. 236 par. 2, Ley 2114 de 2021): la reconoce la EPS, como la de maternidad.
+  static Pago_IncapLPA_EPS = 133;
   static Prestamos = 34;
   static Provision_Cesantias = 35;
   static Provision_IntCesantias = 36;
@@ -98,6 +100,8 @@ class EnumVariablesSistema {
   static IGE_IncapacidadGeneral = 45;
   static IRP_IncapacidadAccidenteTrabajo = 46;
   static LMA_LicenciaMaternidad = 47;
+  // En la PILA va en el campo 26 (LMA) con «P» y no con «X» (Res. 2388 de 2016, valor creado por la Res. 1271 de 2023).
+  static LPA_LicenciaPaternidad = 134;
   static SLN_SuspencionTemporalLicenciaNoRemunerada = 48;
   static VST_VariacionTransitoriaSalario = 49;
   static VSP_VariacionPermanenteSalario = 50;
@@ -438,6 +442,11 @@ class EnumVariablesSistema {
       description: "OTROS",
     },
     {
+      id: EnumVariablesSistema.Pago_IncapLPA_EPS,
+      code: "Pago_IncapLPA_EPS",
+      description: "OTROS",
+    },
+    {
       id: EnumVariablesSistema.Prestamos,
       code: "Prestamos",
       description: "OTROS",
@@ -567,6 +576,11 @@ class EnumVariablesSistema {
     {
       id: EnumVariablesSistema.LMA_LicenciaMaternidad,
       code: "LMA_LicenciaMaternidad",
+      description: "PLANILLA_UNICA",
+    },
+    {
+      id: EnumVariablesSistema.LPA_LicenciaPaternidad,
+      code: "LPA_LicenciaPaternidad",
       description: "PLANILLA_UNICA",
     },
     {

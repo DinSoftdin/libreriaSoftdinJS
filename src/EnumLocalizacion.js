@@ -15,6 +15,7 @@ class EnumLocalizacion {
     static LINKEDIN = 11;
     static YOUTUBE = 12;
     static GEOLOCALIZACION = 13;
+    static EMAIL_EMPRESA = 14;
 
     static descriptions = [
         { id: EnumLocalizacion.TELEFONO, code: 'TELEFONO', description: 'Teléfono' },
@@ -29,7 +30,8 @@ class EnumLocalizacion {
         { id: EnumLocalizacion.TWITTER, code: 'TWITTER', description: 'Twitter' },
         { id: EnumLocalizacion.LINKEDIN, code: 'LINKEDIN', description: 'LinkedIn' },
         { id: EnumLocalizacion.YOUTUBE, code: 'YOUTUBE', description: 'YouTube' },
-        { id: EnumLocalizacion.GEOLOCALIZACION, code: 'GEOLOCALIZACION', description: 'Geolocalización' }
+        { id: EnumLocalizacion.GEOLOCALIZACION, code: 'GEOLOCALIZACION', description: 'Geolocalización' },
+        { id: EnumLocalizacion.EMAIL_EMPRESA, code: 'EMAIL_EMPRESA', description: 'Email Empresa' }
     ];
 /**
 * Obtiene un elemento por su identificador.
